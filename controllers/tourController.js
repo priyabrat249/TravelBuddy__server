@@ -60,21 +60,8 @@ export const getSingleTour = async (req, res) => {
     const id = req.params.id;
     
     try {
-        // const tour = await Tour.findById(id).populate('reviews');
+        const tour = await Tour.findById(id).populate('reviews');
         // console.log(deletedTour);
-        const tour={
-            "title": "Puri, Indonesia",
-            "city": "Bali",
-            "address": "Somewhere in Indonesia",
-            "distance": 400,
-            "price": 99,
-            "maxGroupSize": 8,
-            "desc": "this is the description",
-            "reviews": [],
-        
-            "photo": "/tour-images/tour-img02.jpg",
-            "featured": true
-          }
         console.log(tour);
         res.status(200).json({
             success: true,
